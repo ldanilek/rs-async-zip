@@ -229,9 +229,9 @@ where
         get_combined_sizes(header.uncompressed_size, header.compressed_size, &zip64_extra_field)?;
 
     if header.flags.data_descriptor {
-        return Err(ZipError::FeatureNotSupported(
-            "stream reading entries with data descriptors (planned to be reintroduced)",
-        ));
+        // return Err(ZipError::FeatureNotSupported(
+        //     "stream reading entries with data descriptors (planned to be reintroduced)",
+        // ));
     }
     if header.flags.encrypted {
         return Err(ZipError::FeatureNotSupported("encryption"));
